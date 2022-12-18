@@ -2,7 +2,8 @@
 
 ## Site settings
 title: "Jana Wagemaker"
-description: "Personal website and curriculum vitae of Nicolas “Niols” Jeannerod."
+description: |
+  Personal website and curriculum vitae of Jana Wagemaker.
 
 ## Build settings
 markdown: kramdown
