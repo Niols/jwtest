@@ -9,3 +9,22 @@ markdown: kramdown
 sass:
   sass_dir: _sass
   style: compressed
+
+nav:
+  - name: About
+    url: /index.html
+
+  - name: Curriculum Vitæ
+    url: /curriculum-vitae.html
+
+  - name: PhD Thesis
+    url: /phd-thesis.html
+
+  - name: Talks
+    url: /talks.html
+
+  - name: Publications
+    url: /publications.html
+
+  - name: Teaching
+    url: /teaching.html
