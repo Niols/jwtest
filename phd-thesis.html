@@ -1,0 +1,144 @@
+---
+title: PhD Thesis
+layout: default
+---
+
+<section style="text-align: right;">
+    <p>(Vous pouvez aussi <a href="these.html">voir cette page en français</a>.)</p>
+</section>
+
+<section>
+    <h3>Verification of Shell Scripts Performing File Hierarchy Transformations</h3>
+
+    <p>PhD Thesis in Computer Science</p>
+
+    <p>
+        The final version of the manuscript is
+        <a href="paper/2021-03-30-phd-thesis.pdf">available here</a>.
+    </p>
+</section>
+
+<section>
+    <h3>Defence & Jury</h3>
+
+    <p>The defence took place online on March 30th, 2021 in front of a jury of:</p>
+    <p>
+        <table width="100%">
+            <tr>
+                <td>Advisor</td>
+                <td>Ralf Treinen</td>
+                <td>Professeur</td>
+                <td>Université de Paris</td>
+            </tr>
+            <tr>
+                <td>Advisor</td>
+                <td>Yann Régis-Gianas</td>
+                <td>Maître de Conférences</td>
+                <td>Université de Paris</td>
+            </tr>
+            <tr>
+                <td>Reviewer</td>
+                <td>Andreas Podelski</td>
+                <td>Professor</td>
+                <td>University of Freiburg</td>
+            </tr>
+            <tr>
+                <td>Reviewer</td>
+                <td>Stéphane Demri</td>
+                <td>Directeur de Recherche</td>
+                <td>CNRS</td>
+            </tr>
+            <tr>
+                <td>Examiner</td>
+                <td>Julia Lawall</td>
+                <td>Directrice de Recherche</td>
+                <td>Inria</td>
+            </tr>
+            <tr>
+                <td>Examiner</td>
+                <td>Roberto Di Cosmo</td>
+                <td>Professeur</td>
+                <td>Université de Paris</td>
+            </tr>
+            <tr>
+                <td>Examiner</td>
+                <td>Michael Greenberg</td>
+                <td>Assistant Professor</td>
+                <td>Pomona College</td>
+            </tr>
+        </table>
+    </p>
+    <p>A replay of the presentation is <a href="video/2021-03-30-defence-1080p.webm">available here</a>
+        <span style="font-size: smaller;">[<a href="video/2021-03-30-defence-720p.webm">MQ</a>;<a href="video/2021-03-30-defence-360p.webm">LQ</a>]</span>.
+        The slides are <a href="slides/2021-03-30-defence.pdf">available here</a>.</p>
+</section>
+
+<section>
+    <h3>Abstract</h3>
+
+    <p>
+        This thesis aims at applying techniques from deductive program
+        verification and analysis of tree transformations to the problem of
+        analysing Shell scripts. In particular, we aim at analysing Shell
+        scripts that are used in software installation in the Debian GNU/Linux
+        distribution. The final goal is to build a proof-of-concept tool able to
+        read Debian packages – the way Debian has to distribute software – and
+        report on their quality and on the potential bugs they might have.
+    </p>
+
+    <p>
+        Shell is a scripting language providing control structures around Unix
+        utility calls. Unix utilities are objects that can perform all kind of
+        transformation on Unix filesystems. We model Unix filesystems using
+        feature trees and transformations of Unix filesystems using formulas in
+        a feature tree logic named FTS. We describe these modelisations
+        extensively and discuss their validity.
+
+        The control structures of Shell scripts are converted to control
+        structures in an intermediary language that has clearly defined
+        semantics. This involves the definition of this intermediary language,
+        the design of a static parser for Shell scripts and of a conversion that
+        respects the semantics of both languages.
+
+        The semantics of Shell scripts is then computed using symbolic execution
+        of the aforementioned intermediary language, using a database of
+        specifications of Unix utility calls as formulas of FTS. The result is,
+        for each potential trace of execution of a Shell script, a formula of
+        FTS describing the filesystem transformation this trace performs.
+    </p>
+
+    <p>
+        The main part of the thesis then focuses on decidability of formulas of
+        FTS. The goal is to be able to detect traces of execution of Shell
+        scripts that cannot happen and to check properties on the Shell scripts,
+        such as “if the script fails, then it must not have performed any
+        transformation”.
+
+        A first, theoretical, part aims at showing that the full first-order
+        theory of FTS is decidable. This goes by first reasoning only on
+        Σ₁-formulas of FTS and defining a system of rules R₁ that transforms
+        Σ₁-formulas. We show that we can use R₁ to decide the satisfiability of
+        Σ₁-formulas as well as some other properties. We then extend the
+        reasoning from Σ₁-formulas to first-order formulas of FTS using
+        properties of R₁ and weak quantifier eliminations. We conclude by
+        stating that the first-order theory of FTS is indeed decidable.
+
+        A second, more practical, part aims at designing efficient decision
+        procedures for a subset of FTS rich enough to express the semantics of
+        Unix utilities and Shell scripts. This goes by focusing on conjunctive
+        formulas and improving on R₁. This results in a system R₂ which is more
+        efficient on conjunctive formulas but would not have the required
+        properties to prove decidability of the first-order. We then show how R₂
+        can be implemented efficiently and that it can be extended without loss
+        of efficiency to support specific forms of Σ₁-formulas.
+    </p>
+
+    <p>
+        Finally, this thesis describes the applications of the theoretical work
+        to the implementation of a toolchain able to analyse all software
+        packages in the Debian distribution and report on them. We describe our
+        analysis and the bugs that we have found during the whole project. This
+        thesis takes place within the CoLiS project, ANR-15-CE25-0001, taking
+        place from October 2015 to March 2021.
+    </p>
+</section>

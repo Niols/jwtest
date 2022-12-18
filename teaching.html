@@ -1,0 +1,12 @@
+---
+title: Teaching
+layout: default
+---
+
+<section id="teaching">
+    <table>
+        {% for teachi in site.data.teaching %}
+            {% include teaching-item.html %}
+        {% endfor %}
+    </table>
+</section>

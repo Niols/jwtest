@@ -1,0 +1,12 @@
+---
+title: All My Publications
+layout: default
+---
+
+<section>
+    <table>
+        {% for publi in site.data.publications %}
+            {% include publication.html %}
+        {% endfor %}
+    </table>
+</section>

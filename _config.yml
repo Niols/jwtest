@@ -1,0 +1,11 @@
+---
+
+## Site settings
+title: "Nicolas “Niols” Jeannerod"
+description: "Personal website and curriculum vitae of Nicolas “Niols” Jeannerod."
+
+## Build settings
+markdown: kramdown
+sass:
+  sass_dir: _sass
+  style: compressed

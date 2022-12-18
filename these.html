@@ -1,0 +1,152 @@
+---
+title: Thèse de doctorat
+layout: default
+---
+
+<section style="text-align: right;">
+    <p>(You can also <a href="phd-thesis.html">see this page in english</a>.)</p>
+</section>
+
+<section>
+    <h3>Vérification de scripts Shell effectuant des transformations de système
+        de fichiers hiérarchiques</h3>
+
+    <p>Thèse de doctorat en informatique</p>
+
+    <p>
+        La version finale de la thèse est
+        <a href="paper/2021-03-30-phd-thesis.pdf">disponible ici</a>.
+    </p>
+</section>
+
+<section>
+    <h3>Soutenance & Jury</h3>
+
+    <p>La soutenance à eu lieu en ligne, le 30 mars 2021 devant un jury composé de :</p>
+    <p>
+        <table width="100%">
+            <tr>
+                <td>Directeur</td>
+                <td>Ralf Treinen</td>
+                <td>Professeur</td>
+                <td>Université de Paris</td>
+            </tr>
+            <tr>
+                <td>Directeur</td>
+                <td>Yann Régis-Gianas</td>
+                <td>Maître de Conférences</td>
+                <td>Université de Paris</td>
+            </tr>
+            <tr>
+                <td>Rapporteur</td>
+                <td>Andreas Podelski</td>
+                <td>Professor</td>
+                <td>University of Freiburg</td>
+            </tr>
+            <tr>
+                <td>Rapporteur</td>
+                <td>Stéphane Demri</td>
+                <td>Directeur de Recherche</td>
+                <td>CNRS</td>
+            </tr>
+            <tr>
+                <td>Examinatrice</td>
+                <td>Julia Lawall</td>
+                <td>Directrice de Recherche</td>
+                <td>Inria</td>
+            </tr>
+            <tr>
+                <td>Examinateur</td>
+                <td>Roberto Di Cosmo</td>
+                <td>Professeur</td>
+                <td>Université de Paris</td>
+            </tr>
+            <tr>
+                <td>Examinateur</td>
+                <td>Michael Greenberg</td>
+                <td>Assistant Professor</td>
+                <td>Pomona College</td>
+            </tr>
+        </table>
+    </p>
+    <p>Un enregistrement de la présentation est <a href="video/2021-03-30-defence-1080p.webm">disponible ici</a>
+        <span style="font-size: smaller;">[<a href="video/2021-03-30-defence-720p.webm">MQ</a>;<a href="video/2021-03-30-defence-360p.webm">LQ</a>]</span>.
+        Les slides sont <a href="slides/2021-03-30-defence.pdf">disponible ici</a>.</p>
+</section>
+
+<section>
+    <h3>Résumé</h3>
+
+    <p>
+        Cette thèse vise à appliquer des techniques de vérification déductive de
+        programmes et d'analyse de transformations d'arbres au problème de
+        l'analyse de scripts Shell. En particulier, nous visons à analyser les
+        scripts Shell utilisés pendant l'installation de logiciels de la
+        distribution Debian GNU/Linux. Le but final est de démontrer la
+        faisabilité de notre analyse en développant un outil capable de lire des
+        paquets Debian – le format dans lequel Debian distribue des logiciels –
+        et de fournir un rapport sur leur qualité et sur les bogues potentiels
+        qu'on pourrait y trouver.
+    </p>
+
+    <p>
+        Shell est un langage de script qui fournit des structures de contrôle
+        autour d'appels d'utilitaires Unix. Les utilitaires Unix sont des objets
+        qui peuvent effectuer toutes sortes de transformations sur des systèmes
+        de fichiers Unix. Nous modélisons les systèmes de fichiers Unix à l'aide
+        d'arbres de traits et les transformations de tels systèmes de fichiers à
+        l'aide de formules dans une logique d'arbres de traits nommée FTS. Nous
+        décrivons ces modélisations en détail et discutons leur validité.
+
+        Les structures de contrôle des scripts Shell sont converties en des
+        structures de contrôle d'un langage intermédiaire avec une sémantique
+        clairement définie. Cela implique la définition du langage intermédiaire
+        en question et le développement d'un parseur statique pour les scripts
+        Shell et d'une conversion qui respecte les sémantiques des deux
+        langages. La sémantique d'un script Shell est ensuite calculée par
+        exécution symbolique sur le langage intermédiaire susmentionné en
+        utilisant une base de spécifications des utilitaires Unix comme des
+        formules de FTS. Pour chaque trace d'exécution d'un script Shell, le
+        résultat est une formule de FTS décrivant la transformation de système
+        de fichiers qu'effectue cette trace.
+    </p>
+
+    <p>
+        La partie principale de cette thèse s'intéresse à la décidabilité de
+        formules de FTS. L'objectif est d'être capable de détecter des traces
+        d'exécution de scripts Shell qui ne peuvent pas arriver et de vérifier
+        des propriétés sur les scripts Shell, comme par exemple le fait que « si
+        le script échoue, alors il ne doit pas avoir effectué de
+        transformation. »
+
+        Une première approche théorique vise à montrer que la théorie du premier
+        ordre de FTS est décidable. Cela se fait par un raisonnement sur les
+        formules Σ₁ de FTS et par la définition d'un système de règles R₁ qui
+        transforme les formules Σ₁. Nous montrons que nous pouvons utiliser R₁
+        pour décider de la satisfiabilité de formules Σ₁, parmi d'autres
+        propriétés. Nous étendons ensuite le raisonnement des formules Σ₁ vers
+        les formules du premier ordre de FTS à l'aide de propriétés de R₁ et
+        d'une élimination faible des quantificateurs. Nous concluons en disant
+        que la théorie du premier ordre de FTS est bien décidable.
+
+        Une seconde approche, plus pratique, vise à créer des procédures de
+        décision efficaces pour un sous-ensemble de FTS assez riche pour
+        exprimer les sémantiques des utilitaires Unix et des scripts Shell. Nous
+        faisons cela en nous intéressant en particulier aux formules
+        conjonctives et en améliorant R₁. Le résultat est un système R₂ qui est
+        plus efficace sur les formules conjonctives mais qui n'a pas les
+        propriétés nécessaires pour prouver la décidabilité du premier ordre.
+        Nous montrons ensuite comment R₂ peut être implémenté efficacement et
+        comment il peut être étendu pour supporter des formes spécifiques de
+        formules de Σ₁ sans pertes d'efficacité.
+    </p>
+
+    <p>
+        Enfin, cette thèse décrit les applications de ce travail théorique à
+        l'implémentation d'un groupe d'outils capable d'analyser tous les
+        paquets logiciels de la distribution Debian et de fournir un rapport.
+        Nous décrivons notre analyse et les bogues que nous avons trouvés au
+        long du projet. Cette thèse s'inscrit dans le projet CoLiS,
+        ANR-15-CE25-0001, se déroulant entre octobre 2015 et mars 2021.
+    </p>
+</section>

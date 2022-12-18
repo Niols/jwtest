@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>
+            {% if page.title %}{{ page.title }} |{% endif %}
+            Nicolas “Niols” Jeannerod
+        </title>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Nicolas Jeannerod">
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+        <link rel="stylesheet" type="text/css" href="style/main.css">
+    </head>
+
+    <body>
+        <header id="top">
+            <div class="content">
+                <a id="to_menu" href="#menu"><div></div><div></div><div></div></a>
+                <img src="images/me-right.jpg" />
+                <div>
+                    <h1><a href="index.html">Nicolas “Niols” Jeannerod</a></h1>
+                    <div id="menu">
+                        <nav>
+                            <h2>Menu</h2>
+                            <ul>
+                                <li><a href="index.html">About</a></li>
+                                <li><a href="curriculum-vitae.html">Curriculum Vitæ</a></li>
+                                <li><a href="phd-thesis.html">PhD Thesis</a></li>
+                                <li><a href="talks.html">Talks</a></li>
+                                <li><a href="publications.html">Publications</a></li>
+                                <li><a href="teaching.html">Teaching</a></li>
+                            </ul>
+                        </nav>
+                        <a id="menu-background" href="#"></a>
+                    </div>
+                </div>
+                <span></span>
+            </div>
+        </header>
+
+        <a id="to_top" href="#top">Top</a>
+
+        <div id="body" class="content">
+            {% if page.title %}<h2>{{ page.title }}</h2>{% endif %}
+
+            {{ content }}
+        </div>
+
+        <footer></footer>
+    </body>
+</html>
