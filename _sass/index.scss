@@ -66,14 +66,14 @@
 
   .future {
     @include overlay {
-      background: white;
+      background: $color-background;
       opacity: 0.7;
     }
   }
 
   .highlightable-target:target {
     @include overlay(.5rem) {
-      background: $base-color;
+      background: $color-header-background;
       opacity: 0.2;
       animation-name: fadeout;
       animation-duration: 2s;

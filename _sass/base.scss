@@ -3,6 +3,8 @@ body {
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
     position: relative;
+
+    color: $color-foreground;
 }
 
 .content {
@@ -12,9 +14,9 @@ body {
 }
 
 header {
-    background: $base-color;
+    background: $color-header-background;
     padding: 1rem 0;
-    color: white;
+    color: $color-header-foreground;
     margin-bottom: 2rem;
 
     .content {
@@ -62,7 +64,7 @@ header {
                 top: 0;
                 left: 0;
                 bottom: 0;
-                background: $base-color;
+                background: $color-header-background;
                 z-index: 9999;
 
                 transition: all 1s ease;
@@ -81,7 +83,7 @@ header {
                 left: 0;
                 right: 0;
                 bottom: 0;
-                background: black;
+                background: black; // only here for gray transparent effect
                 opacity: 0.4;
                 z-index: 9998;
             }
@@ -94,7 +96,7 @@ header {
                 display: block;
                 text-align: center;
                 font-weight: bolder;
-                border-bottom: 1px solid white;
+                border-bottom: 1px solid $color-header-foreground;
                 font-size: 1.2rem;
                 padding-top: 2rem;
                 padding-bottom: 2rem;
@@ -109,21 +111,19 @@ header {
 
     #to_menu {
         padding: 0.25rem 0.5rem;
-        border: 1px solid white;
+        border: 1px solid $color-header-foreground;
         border-radius: 4px;
         &:hover {
-            box-shadow: 0 0 1rem white;
-            text-shadow: 0 0 2px white;
+            box-shadow: 0 0 1rem $color-header-foreground;
+            text-shadow: 0 0 2px $color-header-foreground;
         }
 
         div {
             width: 1.275rem;
             height: 0.15rem;
-            background-color: white;
+            background-color: $color-header-foreground;
             margin: 0.3rem 0;
         }
-
-        //    margin-left: 1rem;
 
         margin-right: 1rem;
 
@@ -134,11 +134,11 @@ header {
     }
 
     a {
-        color: white;
+        color: $color-header-foreground;
         text-decoration: none;
 
         &:hover {
-            text-shadow: 0 0 2px white;
+            text-shadow: 0 0 2px $color-header-foreground;
         }
     }
 
@@ -169,16 +169,16 @@ header {
 }
 
 #to_top {
-    background: $base-color;
+    background: $color-header-background;
     padding: .5rem 1rem;
-    border: 1px solid white;
+    border: 1px solid $color-background;
     border-radius: 4px;
     &:hover {
-        box-shadow: 0 0 1rem white;
-        text-shadow: 0 0 2px white;
+        box-shadow: 0 0 1rem $color-background;
+        text-shadow: 0 0 2px $color-background;
     }
 
-    color: white;
+    color: $color-background;
     text-decoration: none;
 
     position: fixed;
@@ -193,9 +193,9 @@ header {
 }
 
 footer {
-    background: $base-color;
+    background: $color-header-background;
     padding: 1rem 0;
-    color: white;
+    color: $color-header-foreground;
     margin-top: 2rem;
 }
 
@@ -204,10 +204,10 @@ footer {
 
     a {
         text-decoration: none;
-        color: $base-color;
+        color: $color-link;
 
-        &:visited { color: $base-color-dark; }
-        &:hover { color: $base-color-bright; }
+        &:visited { color: $color-link-visited; }
+        &:hover { color: $color-link-hover; }
     }
 
     p {
@@ -227,7 +227,7 @@ footer {
             content: "›";
             margin-left: -1.25rem; /* Compensate margin-left of li */
             margin-right: 0.65rem;
-            color: $base-color;
+            color: $color-link;
         }
     }
 

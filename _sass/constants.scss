@@ -1,4 +1,13 @@
-$base-color: rgb(150, 0, 16);
-$base-color-bright: rgb(255, 0, 16);
-$base-color-dark: rgb(150, 0, 116);
+
+// Colours for the body
+$color-foreground: black;
+$color-background: white;
+$color-link: rgb(150, 0, 16);
+$color-link-hover: rgb(255, 0, 16);
+$color-link-visited: rgb(150, 0, 116);
+
+// Colours for the headers
+$color-header-foreground: white;
+$color-header-background: rgb(150, 0, 16);
+
 $layout-breakpoint: 768px;
