@@ -140,6 +140,11 @@ header {
         &:hover {
             text-shadow: 0 0 2px $color-header-foreground;
         }
+
+    }
+
+    a.here {
+        text-decoration: underline;
     }
 
     li {
