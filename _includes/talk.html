@@ -5,7 +5,7 @@
         {% if talk.with %}With {{ talk.with }}.{% endif %}
         {% if talk.place %}At {% include maybe-link.html entry=talk.place %}.{% endif %}
 
-        <br/>
+        <br>
         Links:
         {%- if talk.slides %}
             ⋅&nbsp;<a href="{{ talk.slides }}">Slides</a>
